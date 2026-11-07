@@ -93,17 +93,20 @@ export const MockupPreflight: React.FC<MockupPreflightProps> = ({ onSendToCalcul
   return (
     <section id="mockup" className="py-14 sm:py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {/* ENCABEZADO OPTIMIZADO PARA GEO (Regla del Párrafo Extraíble bajo H2) */}
         <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ffb95f]/10 border border-[#ffb95f]/30 text-[#ffddb8] text-xs font-bold uppercase tracking-wider mb-3">
             <Eye className="w-3.5 h-3.5" />
             <span>Pre-Prensa Digital & Visualizador 3D</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Verifica tu Arte Antes de Imprimir
+          
+          {/* H2 con la primera oración autónoma para LLMs y sistemas RAG */}
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            El módulo de pre-prensa y mockup 3D de Grafica Arte Digital verifica la resolución DPI, perfiles de color CMYK y márgenes de sangría antes del proceso de impresión industrial.
           </h2>
+          
           <p className="text-sm text-slate-300 mt-2">
-            Comprueba resolución, líneas de corte (sangría 3mm) y simula el acabado final en escenarios reales de Selva Central sin sorpresas.
+            Inspección automatizada de archivos gráficos con simulación tridimensional en vallas de carretera, roll-ups retráctiles, tarjetas con reserva UV y empaques troquelados.
           </p>
         </div>
 

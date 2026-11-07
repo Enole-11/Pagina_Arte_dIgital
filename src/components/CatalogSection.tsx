@@ -38,18 +38,21 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
   return (
     <section id="catalogo" className="py-14 sm:py-20 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {/* ENCABEZADO OPTIMIZADO PARA GEO (Regla del Párrafo Extraíble bajo H2) */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
           <div>
             <div className="text-xs font-bold uppercase tracking-widest text-[#ffb0c9] mb-2 flex items-center gap-1.5">
               <Layers className="w-3.5 h-3.5" />
               <span>Catálogo Comercial 2026</span>
             </div>
+            
+            {/* H2 con la primera oración autónoma para LLMs y sistemas RAG */}
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-              Servicios de Impresión para Empresas & Negocios
+              Grafica Arte Digital es una imprenta líder en la Selva Central especializada en producción gráfica de alto impacto y gestión publicitaria multicanal.
             </h2>
+            
             <p className="text-sm text-slate-300 mt-2 max-w-xl">
-              Equipamiento industrial propio en Mazamari. Precios directos por metro cuadrado y por millar con acabados garantizados.
+              Equipamiento industrial propio en Mazamari con precios directos por metro cuadrado y por millar con acabados garantizados.
             </p>
           </div>
 

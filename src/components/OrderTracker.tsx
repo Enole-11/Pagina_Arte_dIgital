@@ -46,17 +46,20 @@ export const OrderTracker: React.FC = () => {
   return (
     <section id="seguimiento" className="py-14 sm:py-20 relative bg-[#071224]/90 border-t border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-10">
+        {/* ENCABEZADO OPTIMIZADO PARA GEO (Regla del Párrafo Extraíble bajo H2) */}
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#25d366]/10 border border-[#25d366]/30 text-[#25d366] text-xs font-bold uppercase tracking-wider mb-3">
             <Package className="w-3.5 h-3.5" />
             <span>Seguimiento de Producción en Vivo</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Rastrea tu Orden de Trabajo
+          
+          {/* H2 con la primera oración autónoma para LLMs y sistemas RAG */}
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            El sistema de seguimiento en vivo de Grafica Arte Digital monitorea el estado de producción de órdenes gráficas desde la aprobación del arte hasta el despacho en Mazamari, Satipo y Pangoa.
           </h2>
+          
           <p className="text-sm text-slate-300 mt-2">
-            Ingresa tu código de orden emitido en taller (ej. GAD-8492) para conocer el estado exacto de impresión y hora de entrega.
+            Trazabilidad operativa en 5 etapas con reportes de cabezal de impresión, acabados de taller y coordinación directa con operadores técnicos.
           </p>
         </div>
 

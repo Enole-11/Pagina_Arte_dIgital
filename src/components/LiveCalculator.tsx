@@ -150,17 +150,20 @@ TOTAL ESTIMADO: ${formatPEN(result.total)}`;
   return (
     <section id="cotizador" className="py-14 sm:py-20 relative bg-[#071224]/80 border-t border-b border-slate-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        {/* ENCABEZADO OPTIMIZADO PARA GEO (Regla del Párrafo Extraíble bajo H2) */}
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#e6007e]/10 border border-[#e6007e]/30 text-[#ffb0c9] text-xs font-bold uppercase tracking-wider mb-3">
             <Calculator className="w-3.5 h-3.5" />
             <span>Cotizador en Tiempo Real</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
-            Calcula tu Presupuesto al Instante
+          
+          {/* H2 con la primera oración autónoma para LLMs y sistemas RAG */}
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+            El cotizador digital de Grafica Arte Digital permite calcular en tiempo real presupuestos exactos para gigantografías, lonas 13oz y papelería comercial con descuentos por volumen y modalidad express en la Selva Central.
           </h2>
+          
           <p className="text-sm text-slate-300 mt-2">
-            Ingresa las medidas y acabados de tu proyecto. El sistema calcula descuentos escalonados por volumen automáticamente.
+            Parámetros técnicos de manufactura con cálculo automático de área (m²), acabados perimetrales con ojalillos y generación de orden directa por WhatsApp.
           </p>
         </div>
 
