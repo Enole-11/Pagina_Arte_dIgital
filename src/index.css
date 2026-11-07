@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --color-surface: #081325;
+  --color-surface-ground: #071224;
+  --color-surface-container: #0F2444;
+  --color-surface-elevated: #152D52;
+  --color-surface-highest: #202a3d;
+
+  --color-primary: #ffb0c9;
+  --color-primary-container: #e6007e;
+  --color-primary-hover: #ff1a98;
+
+  --color-tertiary: #ffb95f;
+  --color-tertiary-container: #a66900;
+
+  --color-whatsapp: #25d366;
+  --color-whatsapp-hover: #22bf5b;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #081325;
+  color: #d8e2fc;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #071224;
+}
+::-webkit-scrollbar-thumb {
+  background: #1c2e4a;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2b4369;
+}
+
+/* Glassmorphism helpers */
+.glass-container {
+  background: rgba(15, 36, 68, 0.72);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.09);
+}
+
+.glass-modal {
+  background: rgba(21, 45, 82, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-pill {
+  background: rgba(15, 36, 68, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}

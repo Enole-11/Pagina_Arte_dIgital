@@ -1,0 +1,6 @@
+{
+  "name": "Gráfica Arte Digital",
+  "description": "Imprenta comercial y gigantografías de alta precisión en Mazamari, Satipo y Selva Central. Cotizador en tiempo real, catálogo interactivo y pedidos directos por WhatsApp.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
