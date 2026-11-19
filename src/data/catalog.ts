@@ -1,6 +1,16 @@
 import { PrintProduct, OrderTrackingItem } from '../types';
 
-export const HERO_IMAGE = '/src/assets/images/hero_printshop_large_format_1794065962644.jpg';
+import heroImage from '../assets/images/hero_printshop_large_format_1794065962644.jpg';
+import bannerImage from '../assets/images/product_gigantografia_banner_1794065962537.jpg';
+import cardsImage from '../assets/images/product_tarjetas_acabado_uv_1794065963050.jpg';
+import flyersImage from '../assets/images/product_volantes_folletos_1794065963997.jpg';
+import packagingImage from '../assets/images/product_packaging_etiquetas_1794065963924.jpg';
+
+export const HERO_IMAGE = heroImage;
+export const BANNER_IMAGE = bannerImage;
+export const CARDS_IMAGE = cardsImage;
+export const FLYERS_IMAGE = flyersImage;
+export const PACKAGING_IMAGE = packagingImage;
 
 export const CATALOG_PRODUCTS: PrintProduct[] = [
   {
@@ -8,7 +18,7 @@ export const CATALOG_PRODUCTS: PrintProduct[] = [
     name: 'Gigantografía Banner 13oz Frontlight',
     category: 'gigantografias',
     categoryLabel: 'Gigantografías & Banners',
-    image: '/src/assets/images/product_gigantografia_banner_1794065962537.jpg',
+    image: BANNER_IMAGE,
     fallbackGradient: 'from-fuchsia-950 via-slate-900 to-indigo-950',
     minQuantity: 'Desde 1 m²',
     turnaround: 'Entrega en 4h a 24h',
@@ -31,7 +41,7 @@ export const CATALOG_PRODUCTS: PrintProduct[] = [
     name: 'Tarjetas Personales Mate + Reserva UV',
     category: 'papeleria',
     categoryLabel: 'Tarjetas & Papelería',
-    image: '/src/assets/images/product_tarjetas_acabado_uv_1794065963050.jpg',
+    image: CARDS_IMAGE,
     fallbackGradient: 'from-pink-950 via-slate-950 to-neutral-900',
     minQuantity: 'Desde 100 unids',
     turnaround: '24 a 48 horas',
@@ -54,7 +64,7 @@ export const CATALOG_PRODUCTS: PrintProduct[] = [
     name: 'Volantes Publicitarios Full Color Couché 150g',
     category: 'papeleria',
     categoryLabel: 'Tarjetas & Papelería',
-    image: '/src/assets/images/product_volantes_folletos_1794065963997.jpg',
+    image: FLYERS_IMAGE,
     fallbackGradient: 'from-blue-950 via-slate-900 to-fuchsia-950',
     minQuantity: 'Desde 1,000 unids (Millar)',
     turnaround: '24 a 48 horas',
@@ -77,7 +87,7 @@ export const CATALOG_PRODUCTS: PrintProduct[] = [
     name: 'Cajas Personalizadas & Etiquetas Troqueladas',
     category: 'empaques',
     categoryLabel: 'Empaques & Stickers',
-    image: '/src/assets/images/product_packaging_etiquetas_1794065963924.jpg',
+    image: PACKAGING_IMAGE,
     fallbackGradient: 'from-indigo-950 via-slate-900 to-rose-950',
     minQuantity: 'Desde 50 unids',
     turnaround: '48 a 72 horas',
