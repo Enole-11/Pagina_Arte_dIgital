@@ -10,7 +10,16 @@ import {
   Maximize2,
   RefreshCw,
 } from 'lucide-react';
-import { HERO_IMAGE, PACKAGING_IMAGE, CARDS_IMAGE, CARDS_IMAGE, ROLLUP_IMAGE, DTF_IMAGE, VINIL_IMAGE, SENALETICA_IMAGE } from '../data/catalog';
+import {
+  HERO_IMAGE,
+  PACKAGING_IMAGE,
+  CARDS_IMAGE,
+  FLYERS_IMAGE,
+  ROLLUP_IMAGE,
+  DTF_IMAGE,
+  VINIL_IMAGE,
+  SENALETICA_IMAGE,
+} from '../data/catalog';
 
 interface MockupPreflightProps {
   onSendToCalculator?: (title: string) => void;
