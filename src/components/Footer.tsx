@@ -1,12 +1,14 @@
 import React from 'react';
 import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
 import { WORKSHOP_METRICS } from '../data/catalog';
+import { useWhatsAppSurvey } from './WhatsAppSurvey';
 
 interface FooterProps {
   onSelectTab: (tab: string) => void;
 }
 
 export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
+  const { openWhatsAppSurvey } = useWhatsAppSurvey();
   return (
     <footer className="bg-[#071224] border-t border-slate-800 text-slate-400 text-xs">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
@@ -90,15 +92,20 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
               {WORKSHOP_METRICS.hoursSunday}
             </p>
             <div className="pt-2">
-              <a
-                href={WORKSHOP_METRICS.whatsappDirect}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() =>
+                  openWhatsAppSurvey(
+                    WORKSHOP_METRICS.whatsappDirect,
+                    'Consulta general',
+                    'Nuevo'
+                  )
+                }
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#25d366] hover:bg-[#22bf5b] text-white font-bold text-xs shadow transition-all"
               >
                 <MessageCircle className="w-4 h-4 fill-white" />
                 <span>WhatsApp: {WORKSHOP_METRICS.phone}</span>
-              </a>
+              </button>
             </div>
           </div>
         </div>

@@ -20,6 +20,7 @@ import {
   formatPEN,
 } from '../utils/calculator';
 import { createCustomQuoteWhatsAppUrl } from '../utils/whatsapp';
+import { useWhatsAppSurvey } from './WhatsAppSurvey';
 
 interface LiveCalculatorProps {
   initialProduct?: PrintProduct | null;
@@ -30,6 +31,7 @@ export const LiveCalculator: React.FC<LiveCalculatorProps> = ({
   initialProduct,
   onOpenMockupWithConfig,
 }) => {
+  const { openWhatsAppSurvey } = useWhatsAppSurvey();
   const [selectedProductId, setSelectedProductId] = useState<string>(
     initialProduct?.id || 'gigantografia-13oz'
   );
@@ -556,15 +558,16 @@ TOTAL ESTIMADO: ${formatPEN(result.total)}`;
 
               {/* Action Buttons */}
               <div className="space-y-2.5 pt-2">
-                <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  type="button"
+                  onClick={() =>
+                    openWhatsAppSurvey(whatsappUrl, currentProduct.name, 'Cotizó')
+                  }
                   className="w-full py-3.5 px-4 rounded-xl text-sm font-bold text-white bg-[#25d366] hover:bg-[#22bf5b] shadow-[0_0_20px_rgba(37,211,102,0.4)] flex items-center justify-center gap-2 transition-all transform active:scale-98"
                 >
                   <MessageCircle className="w-4 h-4 fill-white" />
                   <span>Enviar Pedido a WhatsApp con 1 Clic</span>
-                </a>
+                </button>
 
                 <button
                   type="button"

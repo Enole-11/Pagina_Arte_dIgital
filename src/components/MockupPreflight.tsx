@@ -10,7 +10,7 @@ import {
   Maximize2,
   RefreshCw,
 } from 'lucide-react';
-import { HERO_IMAGE } from '../data/catalog';
+import { HERO_IMAGE, PACKAGING, tarjeta, FLYERS_IMAGE, ROLLUP_IMAGE, DTF_IMAGE, VINIL_IMAGE, SENALETICA_IMAGE } from '../data/catalog';
 
 interface MockupPreflightProps {
   onSendToCalculator?: (title: string) => void;
@@ -39,7 +39,7 @@ export const MockupPreflight: React.FC<MockupPreflightProps> = ({ onSendToCalcul
       id: 'cafe-mazamari',
       title: 'Café Mazamari - Empaque Gourmet',
       type: 'Cajas & Etiquetas',
-      url: '/src/assets/images/product_packaging_etiquetas_1794065963924.jpg',
+      url: PACKAGING,
       dpi: 350,
       hasBleed: true,
       colorScore: 'CMYK + Tinta Oro Directa',
@@ -48,7 +48,7 @@ export const MockupPreflight: React.FC<MockupPreflightProps> = ({ onSendToCalcul
       id: 'tarjeta-estudio',
       title: 'Estudio Jurídico Satipo',
       type: 'Tarjetas con Barniz UV',
-      url: '/src/assets/images/product_tarjetas_acabado_uv_1794065963050.jpg',
+      url: tarjeta,
       dpi: 300,
       hasBleed: true,
       colorScore: 'CMYK + Máscara UV Spot',
@@ -57,7 +57,7 @@ export const MockupPreflight: React.FC<MockupPreflightProps> = ({ onSendToCalcul
       id: 'volante-promo',
       title: 'Campaña Volantes Farmacia',
       type: 'Volantes Couché 150g',
-      url: '/src/assets/images/product_volantes_folletos_1794065963997.jpg',
+      url: FLYERS_IMAGE,
       dpi: 240,
       hasBleed: false,
       colorScore: 'CMYK Estándar',

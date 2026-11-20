@@ -11,8 +11,10 @@ import {
   Building,
 } from 'lucide-react';
 import { WORKSHOP_METRICS } from '../data/catalog';
+import { useWhatsAppSurvey } from './WhatsAppSurvey';
 
 export const WorkshopCoverage: React.FC = () => {
+  const { openWhatsAppSurvey } = useWhatsAppSurvey();
   const routes = [
     {
       city: 'Mazamari (Sede Central)',
@@ -137,15 +139,27 @@ export const WorkshopCoverage: React.FC = () => {
                 <div className="text-xs font-bold text-white">¿Deseas visitar el taller?</div>
                 <div className="text-[11px] text-slate-400">Te enviamos la ubicación GPS exacta</div>
               </div>
-              <a
-                href={WORKSHOP_METRICS.whatsappDirect}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() => {
+                  const gpsUrl = new URL(WORKSHOP_METRICS.whatsappDirect);
+
+                  gpsUrl.searchParams.set(
+                    'text',
+                    'Hola, deseo visitar el taller de Gráfica Arte Digital. ¿Podrían enviarme la ubicación GPS exacta para llegar?'
+                  );
+
+                  openWhatsAppSurvey(
+                    gpsUrl.toString(),
+                    'Ubicación del taller',
+                    'Nuevo'
+                  );
+                }}
                 className="px-3.5 py-2 rounded-lg bg-[#25d366] hover:bg-[#22bf5b] text-white text-xs font-bold flex items-center gap-1.5 shadow"
               >
                 <MessageCircle className="w-3.5 h-3.5 fill-white" />
                 <span>Pedir GPS</span>
-              </a>
+              </button>
             </div>
           </div>
 

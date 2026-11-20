@@ -1,4 +1,4 @@
-import { PrintProduct, OrderTrackingItem } from '../types';
+  import { PrintProduct, OrderTrackingItem } from '../types';
 
 import heroImage from '../assets/images/hero_printshop_large_format_1794065962644.jpg';
 import bannerImage from '../assets/images/product_gigantografia_banner_1794065962537.jpg';
@@ -6,11 +6,21 @@ import cardsImage from '../assets/images/product_tarjetas_acabado_uv_17940659630
 import flyersImage from '../assets/images/product_volantes_folletos_1794065963997.jpg';
 import packagingImage from '../assets/images/product_packaging_etiquetas_1794065963924.jpg';
 
+import rollupImg from '../assets/images/Roll-Up Banner Publicitario Retráctil.jpg';
+import dtfImg from '../assets/images/dtf-textil-polos.jpg';
+import vinilImg from '../assets/images/vinil-adhesivo-arclad.jpg';
+import senaleticaImg from '../assets/images/senales-celtex-sintra.jpg';
+
 export const HERO_IMAGE = heroImage;
 export const BANNER_IMAGE = bannerImage;
 export const CARDS_IMAGE = cardsImage;
 export const FLYERS_IMAGE = flyersImage;
 export const PACKAGING_IMAGE = packagingImage;
+
+export const ROLLUP_IMAGE = rollupImg;
+export const DTF_IMAGE = dtfImg;
+export const VINIL_IMAGE = vinilImg;
+export const SENALETICA_IMAGE = senaleticaImg;
 
 export const CATALOG_PRODUCTS: PrintProduct[] = [
   {
@@ -110,7 +120,7 @@ export const CATALOG_PRODUCTS: PrintProduct[] = [
     name: 'Vinil Adhesivo Arclad Brillante / Mate / Microperforado',
     category: 'gigantografias',
     categoryLabel: 'Gigantografías & Banners',
-    image: '/src/assets/images/product_gigantografia_banner_1794065962537.jpg',
+    image: VINIL_IMAGE,
     fallbackGradient: 'from-cyan-950 via-slate-900 to-slate-950',
     minQuantity: 'Desde 1 m²',
     turnaround: 'Entrega 4h a 12h',
@@ -132,7 +142,7 @@ export const CATALOG_PRODUCTS: PrintProduct[] = [
     name: 'Polos & Gorros Estampado DTF Textil Selva',
     category: 'merchandising',
     categoryLabel: 'Merchandising & DTF',
-    image: '/src/assets/images/product_packaging_etiquetas_1794065963924.jpg',
+    image: DTF_IMAGE,
     fallbackGradient: 'from-violet-950 via-slate-900 to-pink-950',
     minQuantity: 'Desde 6 unids',
     turnaround: '24 horas',
@@ -154,7 +164,7 @@ export const CATALOG_PRODUCTS: PrintProduct[] = [
     name: 'Roll-Up Banner Publicitario Retráctil 85x200cm',
     category: 'gigantografias',
     categoryLabel: 'Gigantografías & Banners',
-    image: '/src/assets/images/product_gigantografia_banner_1794065962537.jpg',
+    image: ROLLUP_IMAGE,
     fallbackGradient: 'from-emerald-950 via-slate-900 to-sky-950',
     minQuantity: 'Desde 1 unidad',
     turnaround: 'Mismo día (4 horas)',
@@ -176,7 +186,7 @@ export const CATALOG_PRODUCTS: PrintProduct[] = [
     name: 'Señalética Industrial & Cuadros en Celtex / Sintra 3mm',
     category: 'senaletica',
     categoryLabel: 'Señalética & Acrílicos',
-    image: '/src/assets/images/product_gigantografia_banner_1794065962537.jpg',
+    image: SENALETICA_IMAGE,
     fallbackGradient: 'from-amber-950 via-slate-900 to-slate-950',
     minQuantity: 'Desde 2 unids',
     turnaround: '24 horas',
@@ -256,8 +266,8 @@ export const DEMO_TRACKING_ORDERS: OrderTrackingItem[] = [
 
 export const WORKSHOP_METRICS = {
   address: 'Jr. Los Héroes 420 (a 2 cuadras de la Plaza de Armas), Mazamari, Junín',
-  phone: '+51 984 892 143',
-  whatsappDirect: 'https://wa.me/51984892143',
+  phone: '+51 973 392 848',
+  whatsappDirect: 'https://wa.me/51973392848',
   email: 'ventas@graficaartedigital.pe',
   hoursWeekday: 'Lunes a Sábado: 7:30 AM - 8:30 PM',
   hoursSunday: 'Domingos: 8:30 AM - 2:00 PM (Servicio Urgente)',

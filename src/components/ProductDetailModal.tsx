@@ -2,6 +2,7 @@ import React from 'react';
 import { X, Clock, ShieldCheck, Check, Sliders, MessageCircle, ArrowRight } from 'lucide-react';
 import { PrintProduct } from '../types';
 import { createProductWhatsAppUrl } from '../utils/whatsapp';
+import { useWhatsAppSurvey } from './WhatsAppSurvey';
 
 interface ProductDetailModalProps {
   product: PrintProduct | null;
@@ -14,6 +15,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   onClose,
   onOpenCalculator,
 }) => {
+  const { openWhatsAppSurvey } = useWhatsAppSurvey();
   if (!product) return null;
 
   const whatsappUrl = createProductWhatsAppUrl(product.name, product.priceDescription);
@@ -136,15 +138,16 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             <span>Configurar y Calcular en Vivo</span>
           </button>
 
-          <a
-            href={whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            onClick={() =>
+              openWhatsAppSurvey(whatsappUrl, product.name, 'Nuevo')
+            }
             className="w-full sm:w-auto px-5 py-3 rounded-xl text-xs font-bold text-white bg-[#25d366] hover:bg-[#22bf5b] shadow-[0_0_15px_rgba(37,211,102,0.35)] transition-all flex items-center justify-center gap-2"
           >
             <MessageCircle className="w-4 h-4 fill-white" />
             <span>Consultar por WhatsApp</span>
-          </a>
+          </button>
         </div>
       </div>
     </div>

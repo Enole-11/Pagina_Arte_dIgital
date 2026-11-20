@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, MessageCircle, ShieldCheck, Zap, Printer, MapPin, Sparkles } from 'lucide-react';
 import { HERO_IMAGE, WORKSHOP_METRICS } from '../data/catalog';
+import { useWhatsAppSurvey } from './WhatsAppSurvey';
 
 interface HeroProps {
   onStartQuote: () => void;
@@ -8,6 +9,7 @@ interface HeroProps {
 }
 
 export const Hero: React.FC<HeroProps> = ({ onStartQuote, onExploreCatalog }) => {
+  const { openWhatsAppSurvey } = useWhatsAppSurvey();
   return (
     <section className="relative overflow-hidden pt-8 pb-14 lg:pt-14 lg:pb-20 border-b border-slate-800/80">
       {/* Background radial gradient pools for dark glassmorphism */}
@@ -44,15 +46,20 @@ export const Hero: React.FC<HeroProps> = ({ onStartQuote, onExploreCatalog }) =>
                 <ArrowRight className="w-4 h-4" />
               </button>
 
-              <a
-                href={WORKSHOP_METRICS.whatsappDirect}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={() =>
+                  openWhatsAppSurvey(
+                    WORKSHOP_METRICS.whatsappDirect,
+                    'Consulta general',
+                    'Nuevo'
+                  )
+                }
                 className="w-full sm:w-auto px-6 py-3.5 rounded-xl text-sm font-bold tracking-wide text-white bg-[#25d366] hover:bg-[#22bf5b] shadow-[0_0_20px_rgba(37,211,102,0.35)] transition-all transform active:scale-98 flex items-center justify-center gap-2"
               >
                 <MessageCircle className="w-4 h-4 fill-white" />
                 <span>Chatear con Producción</span>
-              </a>
+              </button>
 
               <button
                 onClick={onExploreCatalog}

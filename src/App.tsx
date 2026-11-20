@@ -15,6 +15,7 @@ import { ProductDetailModal } from './components/ProductDetailModal';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 import { Footer } from './components/Footer';
 import { PrintProduct } from './types';
+import { WhatsAppSurveyProvider } from './components/WhatsAppSurvey';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<string>('catalogo');
@@ -48,6 +49,7 @@ export default function App() {
   };
 
   return (
+    <WhatsAppSurveyProvider>
     <div className="min-h-screen bg-[#081325] text-[#d8e2fc] flex flex-col font-sans selection:bg-[#e6007e] selection:text-white">
       {/* Top Navigation Bar with Strict Top Bar Contract */}
       <Navbar
@@ -137,5 +139,6 @@ export default function App() {
         }}
       />
     </div>
+    </WhatsAppSurveyProvider>
   );
 }

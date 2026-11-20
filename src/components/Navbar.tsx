@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MessageCircle, Menu, X, PhoneCall } from 'lucide-react';
 import { WORKSHOP_METRICS } from '../data/catalog';
+import { useWhatsAppSurvey } from './WhatsAppSurvey';
 
 interface NavbarProps {
   activeTab: string;
@@ -14,6 +15,7 @@ export const Navbar: React.FC<NavbarProps> = ({
   onOpenQuickQuote,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { openWhatsAppSurvey } = useWhatsAppSurvey();
 
   const navItems = [
     { id: 'catalogo', label: 'Catálogo' },
@@ -71,28 +73,38 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Zone 3: 1 primary action */}
           <div className="hidden sm:flex items-center gap-3 shrink-0">
-            <a
-              href={WORKSHOP_METRICS.whatsappDirect}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() =>
+                openWhatsAppSurvey(
+                  WORKSHOP_METRICS.whatsappDirect,
+                  'Consulta general',
+                  'Nuevo'
+                )
+              }
               className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-wider text-white bg-[#25d366] hover:bg-[#22bf5b] rounded-full shadow-[0_0_16px_rgba(37,211,102,0.35)] transition-all transform active:scale-98 whitespace-nowrap shrink-0"
             >
               <MessageCircle className="w-4 h-4 fill-white" />
               <span>WhatsApp Directo</span>
-            </a>
+            </button>
           </div>
 
           {/* Mobile hamburger button */}
           <div className="flex lg:hidden items-center gap-2">
-            <a
-              href={WORKSHOP_METRICS.whatsappDirect}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() =>
+                openWhatsAppSurvey(
+                  WORKSHOP_METRICS.whatsappDirect,
+                  'Consulta general',
+                  'Nuevo'
+                )
+              }
               className="p-2 text-white bg-[#25d366] rounded-full shadow-[0_0_12px_rgba(37,211,102,0.3)] sm:hidden"
               aria-label="WhatsApp"
             >
               <MessageCircle className="w-4 h-4 fill-white" />
-            </a>
+            </button>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 text-slate-300 hover:text-white rounded-lg hover:bg-slate-800/60 focus:outline-none"
@@ -133,15 +145,21 @@ export const Navbar: React.FC<NavbarProps> = ({
             >
               Cotizar en Línea
             </button>
-            <a
-              href={WORKSHOP_METRICS.whatsappDirect}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                openWhatsAppSurvey(
+                  WORKSHOP_METRICS.whatsappDirect,
+                  'Consulta general',
+                  'Nuevo'
+                );
+              }}
               className="w-full py-3 px-4 rounded-xl text-center font-bold text-sm text-white bg-[#25d366] hover:bg-[#22bf5b] flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(37,211,102,0.3)]"
             >
               <MessageCircle className="w-4 h-4 fill-white" />
-              <span>Chatear por WhatsApp (+51 984 892 143)</span>
-            </a>
+              <span>Chatear por WhatsApp (+51 973 392 848)</span>
+            </button>
           </div>
         </div>
       )}

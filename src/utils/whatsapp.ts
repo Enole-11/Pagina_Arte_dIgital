@@ -1,6 +1,6 @@
 import { CalculationParams, CalculationResult, formatPEN } from './calculator';
 
-const WHATSAPP_PHONE = '51984892143'; // Official Workshop Mazamari line
+const WHATSAPP_PHONE = '51973392848'; // Official Workshop Mazamari line
 
 export function createProductWhatsAppUrl(productName: string, priceText: string): string {
   const message = `👋 ¡Hola Gráfica Arte Digital! Vengo desde su página web y deseo consultar sobre:

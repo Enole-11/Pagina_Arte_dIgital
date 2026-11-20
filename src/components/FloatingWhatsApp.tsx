@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { MessageCircle, X } from 'lucide-react';
 import { WORKSHOP_METRICS } from '../data/catalog';
+import { useWhatsAppSurvey } from './WhatsAppSurvey';
 
 export const FloatingWhatsApp: React.FC = () => {
   const [showTooltip, setShowTooltip] = useState(true);
+  const { openWhatsAppSurvey } = useWhatsAppSurvey();
 
   return (
     <div className="fixed bottom-6 right-6 z-40 flex flex-col items-end">
@@ -26,10 +28,15 @@ export const FloatingWhatsApp: React.FC = () => {
       )}
 
       {/* Floating Pill Pod */}
-      <a
-        href={WORKSHOP_METRICS.whatsappDirect}
-        target="_blank"
-        rel="noopener noreferrer"
+      <button
+        type="button"
+        onClick={() =>
+          openWhatsAppSurvey(
+            WORKSHOP_METRICS.whatsappDirect,
+            'Consulta general',
+            'Nuevo'
+          )
+        }
         className="group flex items-center gap-2.5 px-4 py-3 rounded-full bg-[#25d366] hover:bg-[#22bf5b] text-white shadow-[0_4px_24px_rgba(37,211,102,0.45)] hover:shadow-[0_6px_30px_rgba(37,211,102,0.6)] transition-all duration-300 transform hover:scale-105 active:scale-95"
         aria-label="Contactar al taller por WhatsApp"
       >
@@ -37,7 +44,7 @@ export const FloatingWhatsApp: React.FC = () => {
         <span className="hidden sm:inline font-bold text-xs uppercase tracking-wider">
           WhatsApp Taller
         </span>
-      </a>
+      </button>
     </div>
   );
 };

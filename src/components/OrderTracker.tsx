@@ -16,8 +16,10 @@ import { DEMO_TRACKING_ORDERS } from '../data/catalog';
 import { OrderTrackingItem } from '../types';
 import { createOrderInquiryWhatsAppUrl } from '../utils/whatsapp';
 import { formatPEN } from '../utils/calculator';
+import { useWhatsAppSurvey } from './WhatsAppSurvey';
 
 export const OrderTracker: React.FC = () => {
+  const { openWhatsAppSurvey } = useWhatsAppSurvey();
   const [searchTerm, setSearchTerm] = useState('GAD-8492');
   const [selectedOrder, setSelectedOrder] = useState<OrderTrackingItem>(
     DEMO_TRACKING_ORDERS[0]
@@ -175,15 +177,23 @@ export const OrderTracker: React.FC = () => {
               <div className="text-[11px] text-slate-400">{selectedOrder.specsSummary}</div>
             </div>
 
-            <a
-              href={createOrderInquiryWhatsAppUrl(selectedOrder.id, selectedOrder.clientName)}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={() =>
+                openWhatsAppSurvey(
+                  createOrderInquiryWhatsAppUrl(
+                    selectedOrder.id,
+                    selectedOrder.clientName
+                  ),
+                  selectedOrder.projectName,
+                  'Nuevo'
+                )
+              }
               className="shrink-0 px-4 py-2.5 rounded-xl text-xs font-bold text-white bg-[#25d366] hover:bg-[#22bf5b] shadow-[0_0_12px_rgba(37,211,102,0.3)] flex items-center justify-center gap-2 transition-all whitespace-nowrap"
             >
               <MessageCircle className="w-4 h-4 fill-white" />
               <span>Consultar Pedido #{selectedOrder.id}</span>
-            </a>
+            </button>
           </div>
         </div>
 

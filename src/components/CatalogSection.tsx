@@ -3,6 +3,8 @@ import { Search, Sparkles, MessageCircle, Sliders, Clock, Layers, ArrowUpRight }
 import { PrintProduct, ProductCategory } from '../types';
 import { CATALOG_PRODUCTS } from '../data/catalog';
 import { createProductWhatsAppUrl } from '../utils/whatsapp';
+import { useWhatsAppSurvey } from './WhatsAppSurvey';
+
 
 interface CatalogSectionProps {
   onSelectProductForQuote: (product: PrintProduct) => void;
@@ -15,7 +17,7 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<ProductCategory>('todos');
   const [searchQuery, setSearchQuery] = useState('');
-
+  const { openWhatsAppSurvey } = useWhatsAppSurvey();
   const categories: { id: ProductCategory; label: string }[] = [
     { id: 'todos', label: 'Todos los Trabajos' },
     { id: 'gigantografias', label: 'Gigantografías & Banners' },
@@ -188,16 +190,17 @@ export const CatalogSection: React.FC<CatalogSectionProps> = ({
                         </button>
 
                         {/* Direct WhatsApp Quote Shortcut (1 col) */}
-                        <a
-                          href={whatsappUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                        <button
+                          type="button"
+                          onClick={() =>
+                            openWhatsAppSurvey(whatsappUrl, product.name, 'Nuevo')
+                          }
                           className="col-span-1 py-2.5 rounded-xl bg-[#25d366] hover:bg-[#22bf5b] text-white flex items-center justify-center shadow-[0_0_12px_rgba(37,211,102,0.3)] transition-all active:scale-95"
                           title="Cotizar por WhatsApp"
                           aria-label={`Cotizar ${product.name} por WhatsApp`}
                         >
                           <MessageCircle className="w-4 h-4 fill-white" />
-                        </a>
+                        </button>
                       </div>
 
                       <button
