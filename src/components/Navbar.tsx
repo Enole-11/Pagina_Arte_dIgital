@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { MessageCircle, Menu, X, PhoneCall } from 'lucide-react';
 import { WORKSHOP_METRICS } from '../data/catalog';
 import { useWhatsAppSurvey } from './WhatsAppSurvey';
+import logo from '../assets/images/logo.png';
 
 interface NavbarProps {
   activeTab: string;
@@ -40,9 +41,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={() => handleNavClick('catalogo')}
             className="flex items-center gap-2.5 text-left group focus:outline-none"
           >
-            <div className="w-8 h-8 rounded-lg bg-[#e6007e] flex items-center justify-center font-extrabold text-white text-base shadow-[0_0_15px_rgba(230,0,126,0.5)] group-hover:bg-[#ff1a98] transition-colors">
-              G
-            </div>
+            <img
+              src={logo}
+              alt="Logo de Gráfica Arte Digital"
+              className="w-10 h-10 object-contain shrink-0"
+            />
             <span className="text-xl font-extrabold tracking-tight text-white whitespace-nowrap shrink-0">
               Gráfica Arte Digital
             </span>
