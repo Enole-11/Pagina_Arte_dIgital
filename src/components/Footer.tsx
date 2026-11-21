@@ -2,6 +2,7 @@ import React from 'react';
 import { MapPin, Phone, Mail, Clock, MessageCircle } from 'lucide-react';
 import { WORKSHOP_METRICS } from '../data/catalog';
 import { useWhatsAppSurvey } from './WhatsAppSurvey';
+import logo from '../assets/images/logo.png';
 
 interface FooterProps {
   onSelectTab: (tab: string) => void;
@@ -16,9 +17,11 @@ export const Footer: React.FC<FooterProps> = ({ onSelectTab }) => {
           {/* Brand Info (5 cols) */}
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-[#e6007e] flex items-center justify-center font-extrabold text-white text-base shadow-[0_0_12px_rgba(230,0,126,0.5)]">
-                G
-              </div>
+              <img
+                src={logo}
+                alt="Logo de Gráfica Arte Digital"
+                className="w-10 h-10 object-contain shrink-0"
+              />
               <span className="text-xl font-extrabold tracking-tight text-white">
                 Gráfica Arte Digital
               </span>
